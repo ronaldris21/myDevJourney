@@ -1,0 +1,15 @@
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\consoleapp.exe
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\consoleapp.deps.json
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\consoleapp.runtimeconfig.json
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\consoleapp.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\consoleapp.pdb
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.csproj.AssemblyReference.cache
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.AssemblyInfoInputs.cache
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.AssemblyInfo.cs
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.csproj.CoreCompileInputs.cache
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\refint\consoleapp.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.pdb
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.genruntimeconfig.cache
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\ref\consoleapp.dll
