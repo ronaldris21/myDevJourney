@@ -13,3 +13,6 @@ C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6
 C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.pdb
 C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.genruntimeconfig.cache
 C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\ref\consoleapp.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\bin\Debug\net6.0\es\Humanizer.resources.dll
+C:\Users\Ronald\Desktop\myWebDevelopmentJourney\Dotnet\consoleapp\obj\Debug\net6.0\consoleapp.csproj.CopyComplete

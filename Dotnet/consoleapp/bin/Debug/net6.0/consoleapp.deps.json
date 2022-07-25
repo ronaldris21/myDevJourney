@@ -7,8 +7,29 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "consoleapp/1.0.0": {
+        "dependencies": {
+          "Humanizer.Core.es": "2.14.1"
+        },
         "runtime": {
           "consoleapp.dll": {}
+        }
+      },
+      "Humanizer.Core/2.14.1": {
+        "runtime": {
+          "lib/net6.0/Humanizer.dll": {
+            "assemblyVersion": "2.14.0.0",
+            "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "Humanizer.Core.es/2.14.1": {
+        "dependencies": {
+          "Humanizer.Core": "2.14.1"
+        },
+        "resources": {
+          "lib/net6.0/es/Humanizer.resources.dll": {
+            "locale": "es"
+          }
         }
       }
     }
@@ -18,6 +39,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Humanizer.Core/2.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
+      "path": "humanizer.core/2.14.1",
+      "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "Humanizer.Core.es/2.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e//OIAeMB7pjBV1HqqI4pM2Bcw3Jwgpyz9G5Fi4c+RJvhqFwztoWxW57PzTnNJE2lbhGGLQZihFZjsbTUsbczA==",
+      "path": "humanizer.core.es/2.14.1",
+      "hashPath": "humanizer.core.es.2.14.1.nupkg.sha512"
     }
   }
 }

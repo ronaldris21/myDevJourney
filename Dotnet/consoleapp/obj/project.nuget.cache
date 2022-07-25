@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MK6tmxthkbZHpf8ZxPCiA4CBL178Mu5OntdT+x/+YItgwQhu2e5QmrifGMFZOiEEdfzr+8P+q+TjNs+Voa2ftg==",
+  "dgSpecHash": "/iODPxL0rTs92cUYZ8bOuvbjP6uYphgNwjB5N01fObZiMoUBif3L/yYuwDtl2/BjiMg18Y2Ifs0wZu6DDyudLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ronald\\Desktop\\myWebDevelopmentJourney\\Dotnet\\consoleapp\\consoleapp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ronald\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Ronald\\.nuget\\packages\\humanizer.core.es\\2.14.1\\humanizer.core.es.2.14.1.nupkg.sha512"
+  ],
   "logs": []
 }

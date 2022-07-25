@@ -45,6 +45,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Humanizer.Core.es": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
