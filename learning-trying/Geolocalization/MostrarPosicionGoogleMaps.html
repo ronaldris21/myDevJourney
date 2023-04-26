@@ -1,0 +1,118 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo Geolocalización</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <style>
+        body {
+            background: #2c2c2c;
+        }
+        article {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            background: rgba(0,0,0,0.7);
+            margin: 50px auto;
+            width: 70%;
+            border: 2px solid #FFA800;
+            border-radius: 10px;
+            box-shadow: 0 0 4px #FFA800;
+            color: #FFA800;
+            text-align: center;
+        }
+
+        #mapa {
+            height: 400px;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #parar {
+            display: block;
+            margin: 20px auto 30px;
+            width: 100px;
+            border: 2px solid #FFA800;
+            border-radius: 10px;
+            box-shadow: 0 0 4px #FFA800;
+            color: #FFA800;
+        }
+
+        #parar:hover {
+            border: 2px solid #2E5E90;
+            box-shadow: 0 0 4px #2E5E90;
+            color: #2E5E90;
+        }
+    </style>
+</head>
+    <body>
+
+	<article id="mapa">
+ 	</article>
+ 	<input type="button" id="parar" value="Parar" onclick="detener();"/>
+
+    <script>
+        var watchId;
+        var mapa = null;
+        var mapaMarcador = null;	
+
+        if (navigator.geolocation) {
+            watchId = navigator.geolocation.watchPosition(mostrarPosicion, mostrarErrores, opciones);	
+        } else {
+            alert("Tu navegador no soporta la geolocalización, actualiza tu navegador.");
+        }
+
+        function mostrarPosicion(posicion) {
+            var latitud = posicion.coords.latitude;
+            var longitud = posicion.coords.longitude;
+            var precision = posicion.coords.accuracy;
+
+            var miPosicion = new google.maps.LatLng(latitud, longitud);
+
+            // Se comprueba si el mapa se ha cargado ya 
+            if (mapa == null) {
+                // Crea el mapa y lo pone en el elemento del DOM con ID mapa
+                var configuracion = {center: miPosicion, zoom: 16, mapTypeId: google.maps.MapTypeId.HYBRID};
+                mapa = new google.maps.Map(document.getElementById("mapa"), configuracion);
+
+                // Crea el marcador en la posicion actual
+                mapaMarcador = new google.maps.Marker({position: miPosicion, title:"Esta es tu posición"});
+                mapaMarcador.setMap(mapa);
+            } else {
+                // Centra el mapa en la posicion actual
+                mapa.panTo(miPosicion);
+                // Pone el marcador para indicar la posicion
+                mapaMarcador.setPosition(miPosicion);
+            }
+        }
+
+        function mostrarErrores(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert('Permiso denegado por el usuario'); 
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert('Posición no disponible');
+                    break; 
+                case error.TIMEOUT:
+                    alert('Tiempo de espera agotado');
+                    break;
+                default:
+                    alert('Error de Geolocalización desconocido :' + error.code);
+            }
+        }
+
+        var opciones = {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 1000
+        };
+
+        function detener() {
+            navigator.geolocation.clearWatch(watchId);
+        }
+    </script>
+</body>
+</html>

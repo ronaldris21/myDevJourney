@@ -1,0 +1,104 @@
+/* Estilo general */ 
+body { 
+    padding: 0; 
+    background-color: gray; 
+    font: .8em Verdana, Arial, Helvetica, sans-serif; 
+} 
+body, h1, h2, p { 
+    margin: 0; 
+} 
+#contenedor { 
+    width: 940px; 
+    margin: 20px auto 0 auto; 
+    padding: 10px; 
+    background-color: white; 
+} 
+ 
+/* Encabezado*/ 
+#arriba { 
+    margin: 0 0 10px 0; 
+    padding: 5px; 
+    background-color: gray; 
+} 
+#arriba h1, #arriba h2 { 
+    color: white; 
+} 
+ 
+/* Barra de navegación */ 
+#navegacion { 
+    margin: 0 0 10px 0; 
+    padding: 5px; 
+    background-color: silver; 
+} 
+#navegacion p { 
+    color: white; 
+} 
+#navegacion a { 
+    text-decoration: none; 
+    color: white; 
+} 
+ 
+/* Contenido principal */ 
+#contenido { 
+    float: left; 
+    width: 720px; 
+    padding: 5px; 
+} 
+article { 
+    margin: 0 0 20px 0; 
+    border-top: 1px dotted #333; 
+} 
+ 
+/* Columna lateral */ 
+#sidebar { 
+    float: left; 
+    width: 190px; 
+    margin: 0 0 0 10px; 
+    padding: 5px; 
+    background-color: #E8E8E8; 
+} 
+#sidebar p.centro { 
+    text-align: center; 
+} 
+ 
+/* Pie de página */ 
+#pie-de-pagina { 
+    padding: 5px; 
+    background-color: #E8E8E8; 
+    clear: both; 
+} 
+#pie-de-pagina p { 
+    text-align: center; 
+    font-size: .75em; 
+}
+
+
+/* Consulta de medios */ 
+@media screen and (max-width: 768px) { 
+    body { 
+          background-color: #fff; 
+    } 
+    #contenedor { 
+          width: 100%; 
+          margin: 5px; 
+    } 
+    #arriba { 
+          background-color: #000; 
+          color: #fff; 
+    } 
+    #contenido { 
+          float: none; 
+          width: auto; 
+    } 
+    #sidebar { 
+          float: none; 
+          width: auto; 
+          margin: 0 0 10px 0; 
+    } 
+    #sidebar img { 
+          display: none; 
+    } 
+    article h1 { 
+          font-size: 1.5em; 
+    } 
+}

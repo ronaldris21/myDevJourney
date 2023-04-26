@@ -1,0 +1,98 @@
+strong, b,th, strong *, b *, th * {
+    font-weight: bold;
+  }
+  
+  em, i, em *, i * {
+    font-style: italic;
+  }
+body{
+    font-family: Arial, Helvetica, sans-serif, 'Yanone Kaffeesatz';
+    padding: 0 5% 0 5%;
+    width: 60%;
+    margin-left: 15%;
+    font-size: large;
+}
+
+#titulo{
+    font-family: 'Yanone Kaffeesatz';
+    color: rgb(8, 100, 69);
+    font-size:50px;
+    text-align: left;
+    font-weight: bolder;
+    padding: 20px 0;
+}
+
+p strong{
+    color: red;
+    
+}
+
+.destacado{
+    color: orange;
+}
+
+#subtitulo{
+    font-family: 'Yanone Kaffeesatz';
+    color: rgb(38, 77, 122);
+    font-size:40px;
+    text-align: left;
+    font-weight: bolder;
+    padding: 30px 0 20px 0;
+}
+
+
+a em{
+    color:blue;
+}
+
+.especial{
+    color:purple;
+}
+
+table{
+    table-layout: auto;
+    width:70%;
+    border-collapse:collapse;
+    margin-bottom: 40px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    color: green;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  caption{
+    text-align:center;
+    padding: 20px 0 10px 0;
+    color:blue;
+  }
+
+  .especial{
+    color: orange;
+  }
+  td strong{
+    color: orange;
+  }
+  tfoot th, tbody th{
+      color:red;
+  }
+
+  #adicional{
+      color:rgb(50, 136, 15);
+  }
+
+  #especial{
+      color:rgb(204, 32, 60);
+  }
+
+  a.ex1:link, a.ex1:visited{
+    color: red;
+}
+
+a.ex2:link, a.ex2:visited{
+    color:rgb(26, 121, 108);
+}
