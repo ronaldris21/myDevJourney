@@ -100,7 +100,7 @@ Archivo Package.json agregar esto
 "devDependencies": {
     "gh-pages,": "^5.0.0"
   },
-  "homepage": "https://ronaldris21.github.io/RepositoryName"
+  "homepage": "https://ronaldris21.github.io/RepositoryName/"
 
 
 
@@ -114,3 +114,6 @@ Agregar un nuevo script
     "predeploy":"npm run build",
     "deploy": "gh-pages -d build"
   },
+
+
+  SUBIR A GITHUB, activar Github Pages y seleccionar la rama correcta
