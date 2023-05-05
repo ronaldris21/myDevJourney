@@ -2,6 +2,9 @@ import React from "react";
 import './TodoSearch.css'
 
 
+import {FcSearch} from "react-icons/fc"        
+
+
 function TodoSearch({searchValue, setSearchValue})
 {
 
@@ -10,8 +13,10 @@ function TodoSearch({searchValue, setSearchValue})
         setSearchValue(event.target.value);
     }
 
-    return(
 
+    return[
+
+        
         <input 
         className="TodoSearch" 
         type="search" 
@@ -19,9 +24,10 @@ function TodoSearch({searchValue, setSearchValue})
         placeholder="Buscar tarea"
         value={searchValue}
         onChange={onChangeTareaBuscada}
-        />
+        />,
+        <FcSearch className="iconSearch" />
         
-    )
+    ]
 }
 
 export {TodoSearch}

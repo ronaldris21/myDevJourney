@@ -22,3 +22,8 @@
   .TodoSearch:focus {
     outline-color: #61DAFA;
   }
+
+  .iconSearch{
+    height: 60px;
+    width: 60px;
+  }

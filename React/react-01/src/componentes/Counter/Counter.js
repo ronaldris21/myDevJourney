@@ -1,11 +1,15 @@
 import React from "react";
+import { useLocalStorage } from "../../TodoContext/useLocalStorage";
 
-function Counter({initValue})
+function Counter({name, initValue})
 {
     if(!initValue)
         initValue=0;
 
-    const [counterValue, setCounterValue] = React.useState(initValue);
+    if(!name)
+        name = "defaultCounter";
+    
+    const [counterValue, setCounterValue] = useLocalStorage(name,initValue);
 
     React.useEffect(()=>
     {
@@ -15,7 +19,7 @@ function Counter({initValue})
     return(
         <div>
             <span>You clicked {counterValue} times</span>
-            <button type="button" onClick={()=>setCounterValue(counterValue+1)}>Add</button>
+            <button type="button" onClick={()=>setCounterValue(counterValue+1)}>Add {name}</button>
         </div>
     )
 
