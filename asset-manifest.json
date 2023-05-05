@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/RepositoryName/static/css/main.996e74e1.css",
-    "main.js": "/RepositoryName/static/js/main.e0289337.js",
-    "static/js/787.9c04a852.chunk.js": "/RepositoryName/static/js/787.9c04a852.chunk.js",
-    "static/media/undraw_checklist.svg": "/RepositoryName/static/media/undraw_checklist.2c2c6b0b6050bfcec4a631fa1b070603.svg",
-    "index.html": "/RepositoryName/index.html",
-    "main.996e74e1.css.map": "/RepositoryName/static/css/main.996e74e1.css.map",
-    "main.e0289337.js.map": "/RepositoryName/static/js/main.e0289337.js.map",
-    "787.9c04a852.chunk.js.map": "/RepositoryName/static/js/787.9c04a852.chunk.js.map"
+    "main.css": "/index.html/static/css/main.996e74e1.css",
+    "main.js": "/index.html/static/js/main.79b3cda3.js",
+    "static/js/787.9c04a852.chunk.js": "/index.html/static/js/787.9c04a852.chunk.js",
+    "static/media/undraw_checklist.svg": "/index.html/static/media/undraw_checklist.2c2c6b0b6050bfcec4a631fa1b070603.svg",
+    "index.html": "/index.html/index.html",
+    "main.996e74e1.css.map": "/index.html/static/css/main.996e74e1.css.map",
+    "main.79b3cda3.js.map": "/index.html/static/js/main.79b3cda3.js.map",
+    "787.9c04a852.chunk.js.map": "/index.html/static/js/787.9c04a852.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.996e74e1.css",
-    "static/js/main.e0289337.js"
+    "static/js/main.79b3cda3.js"
   ]
 }
