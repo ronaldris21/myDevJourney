@@ -1,0 +1,18 @@
+<html>
+<body>
+
+  <table border=1>
+  <tr> <td> celda 1 </td> <td> celda 2 </td> <td rowspan=2 ID="celda3"> celda 3 </td> </tr>
+  <tr> <td> celda 4 </td> <td> celda 4 </td> </tr>
+  </table>
+  
+  <script language="JavaScript">
+  function cambiar() {
+   
+     document.getElementById ('celda3').innerHTML = "hola";
+  }
+  </script>
+
+  <input type="button" onClick="cambiar()" value="Cambia celda">
+</body>
+</html>

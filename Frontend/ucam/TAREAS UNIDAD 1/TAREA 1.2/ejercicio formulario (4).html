@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="es">
+	<head>
+		<title>FORMULARIO HTML</title>	
+		<meta charset="utf-8">
+	
+	</head>
+	
+	<body>
+		<header>
+			<h1>Ejercicio Formularios</h1>
+		</header>
+		<fieldset>
+			<legend>Complete el siguiente formulario</legend>
+		<form action="mailto:html@cmilagrosa.es" method="post" autocomplete="on">
+			<p>
+			Email: <input type="email" name="miemail" id="miEmail" placeholder="Escribe el email" autofocus> <br><br>
+			Teléfono: <input type="tel" name="telefono" id="teleFono" required> <br><br>
+			Dirección Web: <input type="url" name="miurl" id="miUrl"><br><br>
+			Color: <input type="color" name="micolor" required><br><br>
+			Precio: <input type="number"name="precio" id="Precio" min="5" max="20" step="0.1" required> <br><br>
+			Fecha: <input type="date" name="fecha" id="Fecha" min="2020-11-01" max="2020-11-30" required> <br><br>
+			Hora: <input type="time" name="hora" id="Hora" min="09:00" max="20:00" step="1800" required><br><br>
+			<datalist id="ciudades">
+				<option value="Madrid" selected></option>
+				<option value="Barcelona"></option>
+				<option value="Sevilla"></option>
+					<option value="Bilbao"></option>
+					<option value="La Coruña"></option>
+				
+			</datalist>
+			Ciudad: <input type="" name="" id="" list="ciudades" placeholder="Selecciona una ciudad" required><br><br>
+			Número de Tarjeta: <input type="text" name="numtarjeta" id="numTarjeta" pattern="[0-9]{14,16}" placeholder="nº de tarjeta" 
+			title="numero entre 14 y 16 digitos"  required><br><br>
+			Fecha Caducidad: <input type="month" name="mes" id="Mes" required><br><br>
+			<input type="submit" name="boton" value="Enviar"><br>
+			</p>
+		</fieldset>
+		</form>
+
+
+		<button onclick="getLocation()">  Coordenadas</button>
+</p>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+</script>
+		
+	</body>
+		
+</html>

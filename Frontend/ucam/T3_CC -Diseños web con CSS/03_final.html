@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+
+   <title>Lesson 04 final</title>
+
+   <link href="reset.css" rel="stylesheet" type="text/css" />
+   <link href="basefinal.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+#wrap { 	
+background-color: #E0B3B9; 
+width: 960px; 	
+border: thin solid black; 
+margin: 0 auto; 
+
+} 
+
+#masthead { 	
+background-color: #FFF; 
+} 
+
+#mainnav { 	
+background-color: #C2C895;
+height: 40px; 
+}
+
+#mainnav li { 	
+float: left; 
+width: 120px; 	
+height: 25px; 
+background-color: #CCC; 	
+text-align: center; 	
+border-left: 1px black solid; 	
+border-right: 1px black solid;
+line-height: 25px;
+}
+
+
+#sidebar { 	
+float: left; 	
+width: 300px; 
+background-color: #CCC;
+
+}
+
+#maincontent { 	
+width: 600px; 	
+float: right; 	
+background-color: #ADA446; 
+
+}
+
+#footer 
+
+{ 	
+clear: both; 
+background-color: #BA2B22;
+background-image: url(images/footer_background.jpg); 	
+background-repeat: no-repeat; 
+width: 960px;
+height: 118px;
+padding-top: 10px;
+
+}
+
+#footer p {
+margin: 10px 0 0 20px; 	
+width:280px;   	
+font-family:Verdana, Geneva, sans-serif;            
+font-size: 0.689em;
+
+}
+
+
+p, h1, h2, h3, h4 { 	
+
+margin-bottom: 20px;	
+
+}
+
+#sidebar p, #sidebar h2, #sidebar h3, #sidebar h4, #maincontent p, #maincontent h1, #maincontent h2, #maincontent h3{ 	
+margin-left:20px;
+margin-right:20px;
+}
+
+#sidebar p {
+	margin-left:30px;
+}
+
+#sidebar h2  { 	
+margin-top:15px; 
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+   
+  <!-- This is the beginning of the wrapping div. This div will nest all of the other page elements and have a fixed-width.-->
+  
+   <div id="wrap">
+ 
+<!-- This is the beginning of the masthead div. Sometimes known as the "header", this div will contain the site logo and eventually other sections such as the secondary navigation .-->
+
+      <div id="masthead">
+      <img src="images/smoothieworld_logo.jpg" width="200" height="150" alt="smoothieworld_logo" />
+      </div>
+      
+<!-- End of Masthead Div-->
+
+<!-- This is the beginning of the main navigation div. We call this "mainnav" because it will serve as users primary method of navigation.-->
+      
+           <div id="mainnav">     
+           <ul>	
+                <li><a href="index.html">Home</a></li>                      			 
+                <li><a href="about.html">About Us</a></li>              		
+                <li><a href="recipes.html">Recipes</a></li>                                          
+                <li><a href="submitrecipe.html">Submit a Recipe</a></li>
+                <li><a href="forum.html">Forum</a></li>             			
+                <li><a href="contact.html">Contact Us</a></li>
+			</ul>
+
+           	
+         
+</div>
+          <!-- End of mainnav Div-->
+
+
+<!-- This is the beginning of the innerwrap section, called so because it nests the sidebar and maincontent but is itself nested within the wrap div..-->
+      
+      <div id="innerwrap">
+      
+<!-- This is the beginning of the sidebar. Although this sidebar will be positioned to the left, you want to avoid giving sidebars names such as 'left' or 'right', this avoids confusion if you decide to move the sidebar at any point.-->      
+         
+         <div id="sidebar">
+            <h2>Top Rated Smoothies</h2>
+
+            <h3>The Funky Orange</h3>
+            <p>Submitted by user iosborn22, this smoothie has recieved over 200 5 star ratings and its <strong>orange juice</strong> and <strong>banana</strong> base make this a great choice for breakfast!         </p>
+           <h3>The Tropical KickBack</h3>
+            <p>Submitted by user smoothj282, this smoothie combines the exotic ingredients passionfruit and mango. The result is an invgorating and delicious beverage that is great any time of the day.            </p>
+            <h4>Submit a Recipe</h4>
+         </div>
+         <!-- End of Sidebar Div-->
+         
+<!-- This is the beginning of the main column which is named so because it holds the primary content of the site..-->
+
+        <div id="maincontent">
+          <h1>SmoothieWorld is your #1 destination for smoothie recipes.</h1>
+            <h2>Our mission statement </h2>
+            <p>We here at SmoothieWorld are devoted to making the smoothie beverage a daily part of your life. Whether it be for breakfast, lunch or even dinner, smoothies are great way to get the nutrition you need and have fun while doing it.</p>
+            <p>The recipes on our site have all been tested in our lab of smoothie experts. Other smoothie sites might have more recipes or feature more exotic fruits than you'll find here, but we feel that quality beats out quantity and novelty any day.We also believe the best recipes come from you the reader, that's why we encourage you to join our smoothie community. Learn more</p>
+            <p>&nbsp;</p>
+         </div>
+         <!-- End of Main Div-->
+
+      </div>
+	  <!-- End of Innerwrap Div-->
+
+<!-- This is the beginning of the  footer will live at the bottom of the page, although it is still nested within the -->
+      <div id="footer"> 
+	<p>Copyright SmoothieWorld 2011 </p>
+<p>Registration on or use of this site constitutes acceptance of our <a href="useragreement.html"> user agreement </a> and <a href="privacy.html">Privacy Policy.</a></p>
+
+
+		
+
+    </div>
+	  <!-- End of Footer Div-->
+
+      
+   </div>
+   <!-- End of the Wrap Div-->
+
+</body>
+</html>

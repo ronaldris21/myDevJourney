@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html lang="es">
+	<head>
+		<title>FORMULARIO DE REGISTRO - MI WEB</title>	
+		<meta charset="utf-8">
+	
+	</head>
+	
+	<body>
+		<header>
+			<h1>Formularios II</h1>
+		</header>
+		<fieldset>
+			<legend>Complete el siguiente formulario</legend>
+		<form action="" method="GET" autocomplete="on">
+			<p>
+			Nombre: <input type="text" name="Nombre" id="Nombre" placeholder="Escriba su nombre" maxlength="50" > <br><br>
+			Apellidos: <input type="text" name="Apellidos" id="Apellidos" placeholder="Escriba sus apellidos" maxlength="50" > <br><br>
+			Sexo: <input type="radio" name="genre" value="hombre">Hombre   <input type="radio" name="genre" value="mujer"> Mujer<br><br>
+			Correo electrónico: <input type="email" name="miemail" required><br><br>
+			<input type="checkbox" name="casillainfo" id="casillainfo" value="on" checked> Deseo recibir información sobre novedades y ofertas<br><br>
+			<input type="checkbox" name="casilladeclar" id="casilladeclar" value="on"> Declaro haber leído y aceptar las condiciones generales 
+			del programa y la normativa sobre protección de datos<br><br>
+
+			<datalist id="poblacion">
+				<option value="Madrid" selected></option>
+				<option value="Barcelona"></option>
+				<option value="Sevilla"></option>
+					<option value="Bilbao"></option>
+					<option value="La Coruña"></option>
+			</datalist>
+			Ciudad: <input type="" name="" id="" list="poblacion" placeholder="Selecciona una poblacion" required><br><br>
+			
+			Descripción:<br>
+			<textarea name="descripcion" cols="30" rows="3" placeholder="Escriba aquí el texto"></textarea><br><br>
+
+			<input type="submit" name="boton" value="Enviar"><br>
+			</p>
+		</fieldset>
+		</form>
+		
+	</body>
+		
+</html>

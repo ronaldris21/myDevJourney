@@ -1,0 +1,17 @@
+name: Say hello
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hello_world:
+    runs-on: [self-hosted, linux, x64] 
+    steps:
+      - name: Echo the message
+        run: |
+          echo "Hola Ris!"
+      - name: Dime la fecha
+        run: date
+      - run: ls -l

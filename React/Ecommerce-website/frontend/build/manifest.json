@@ -1,0 +1,8 @@
+{
+  "short_name": "CyberMarket",
+  "name": "CyberMarket Ecommerce",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

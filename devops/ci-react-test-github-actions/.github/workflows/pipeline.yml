@@ -1,0 +1,184 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+    
+jobs:
+
+  avoid_reduncy:
+    runs-on: [self-hosted, linux, x64] 
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  lint:
+    runs-on: [self-hosted, linux, x64] 
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run eslint
+     
+
+  build:
+    runs-on: [self-hosted, linux, x64] 
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+  test:
+    needs: [lint, build]
+    runs-on: [self-hosted, linux, x64] 
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+      - name: Test
+        run: npm test
+
+
+  deployFAST:
+    needs: [build]
+    runs-on: [self-hosted, linux, x64] 
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2  # Manteniendo la misma versión para la consistencia
+      - name: Setup Node.js
+        uses: actions/setup-node@v2  # Manteniendo la misma versión para la consistencia
+        with:
+          node-version: '14.x'  # Manteniendo la misma versión de Node.js
+      - name: Install dependencies
+        run: npm ci  # Cambiado a npm para mantener la consistencia
+      - name: Build application
+        run: npm run build  # Usando npm para mantener la consistencia
+      - id: deploy
+        name: Deploy to Github Pages
+        uses: fcodelabs/react-deploy-github-pages-action@v1.0.0
+        with:
+          build_dir: dist  # Asegúrate de que este sea el directorio correcto donde se generan los archivos de compilación
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+  # # e2e:
+  # #   needs: [test]
+  # #   runs-on: [self-hosted, linux, x64] 
+  # #   steps:
+  # #     - uses: actions/checkout@v2
+  # #       with:
+  # #         fetch-depth: 0
+  # #     - uses: actions/setup-node@v2
+  # #       with:
+  # #         cache: 'npm'
+  # #         node-version: '14'
+  # #     - name: Install dependencies
+  # #       run: npm ci
+  # #     - uses: actions/download-artifact@v2
+  # #       with:
+  # #         name: dist
+  # #         path: dist
+  # #     - name: E2E tests
+  # #       uses: cypress-io/github-action@v2
+  # #       with:
+  # #         command: npm run test:e2e
+  # #         start: npm run start-test
+  # #         wait-on: http://localhost:5000
+
+  e2e:
+    needs: [test]
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+      - name: Start Server
+        run: npm run start-test &
+      - name: E2E tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          wait-on: http://localhost:5000
+          wait-on-timeout: 180 # Espera hasta 60 segundos para que el servidor esté listo
+  
+  deployGHPages:
+    needs: [test]
+    runs-on: [self-hosted, linux, x64]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and Deploy React app to GitHub Pages
+      uses: omkartapale/react-deployment-gh-pages@v1.0.0
+
+  # # deploy:
+  # #   needs: [test, e2e]
+  # #   runs-on: [self-hosted, linux, x64] 
+  # #   steps:
+  # #     - uses: actions/checkout@v2
+  # #       with:
+  # #         fetch-depth: 0
+  # #     - name: Deploy to Heroku
+  # #       if: ${{ github.event_name == 'push' }}
+  # #       uses: akhileshns/heroku-deploy@v3.12.12
+  # #       with:
+  # #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+  # #         heroku_app_name: ${{secrets.HEROKU_APP}}
+  # #         heroku_email: ${{secrets.HEROKU_API_EMAIL}}
+  # #         healthcheck: "https://${{secrets.HEROKU_APP}}.herokuapp.com/health"
+  # #         rollbackonhealthcheckfailed: true
+
+
+ 

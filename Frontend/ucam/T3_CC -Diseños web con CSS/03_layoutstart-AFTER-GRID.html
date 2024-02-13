@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+
+   <title>Lesson 03 GRID layout </title>
+   <link href="reset.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="base.css">
+
+<style type="text/css">
+
+#wrap {
+   width: 80%;
+   border: thin solid black;
+   margin: 0 auto; /*/#Con esto lo esta centrado*/
+}
+
+
+#masthead{
+   background-image: linear-gradient(to bottom, yellow,white);
+}
+
+#innerwrap{
+   display: grid;
+   clear: both;
+   grid-auto-flow: column;
+   /*grid-template-columns: 60% 40%;*/
+   justify-content: space-around;
+}
+@media (max-width: 800px) {
+   #innerwrap{
+      grid-auto-flow: row;
+      grid-template-columns: repeat(auto-fit)
+
+   }
+}
+@media (min-width: 800px) {
+   #innerwrap{
+      grid-template-columns: 60% 40%;
+      grid-auto-flow: column;
+   }
+}
+
+#main{
+   box-sizing: border-box;
+   padding: 0px 20px 0px 20px;
+}
+
+#sidebar{
+ 
+ padding: 0px 20px 0px 20px;
+ box-sizing: border-box;
+ background-image: url(images/sidebar_bg.png);
+ background-repeat: repeat-x;
+ border-left: thin solid black;
+}
+
+
+#footer{
+   clear: both;
+   background-size: cover;
+   background-image: url(images/footer_background.jpg);
+   background-repeat: no-repeat;
+}
+#footer p{
+   margin: 10px 0 0 20px;
+   width: 280px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 0.689em;
+}
+
+#mainnav{
+   clear: both;
+}
+
+#mainnav li{
+   float: left;
+   box-sizing: border-box;
+   width: 20%;
+   height: 40px;
+   text-align: center;
+   border-right: 1px black solid;
+   border-left: 1px black solid;
+   line-height: 40px;
+   background-color: #000;
+}
+
+#mainnav ul li a{
+   color: #fff;
+   text-decoration: none;
+   display: block;
+
+}
+
+#mainnav ul li a:hover{
+   background-color: white;
+   color: black ;
+}
+
+
+p, h1,h2,h3{
+   margin-bottom: 20px;
+}
+
+#sidebar h2{
+   margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+   
+  <!-- This is the beginning of the wrapping div. This div will nest all of the other page elements and have a fixed-width.-->
+  
+   <div id="wrap">
+ 
+<!-- This is the beginning of the masthead div. Sometimes known as the "header", this div will contain the site logo and eventually other sections such as the secondary navigation .-->
+
+      <div id="masthead">
+         <img src="images/wa_logo.jpg" alt="worldwide Appael Logo" height="123" width="200">
+      </div>
+      
+<!-- End of Masthead Div-->
+
+<!-- This is the beginning of the main navigation div. We call this "mainnav" because it will serve as users primary method of navigation.-->
+      
+           <div id="mainnav">     
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="ourcompany.html">Our Company</a></li>
+                  <li><a href="policies.html">Policies</a></li>
+                  <li><a href="doc_repository.html">Documents</a></li>
+                  <li><a href="nesw.html">News</a></li>
+               </ul>
+         
+            </div>
+          <!-- End of mainnav Div-->
+
+
+<!-- This is the beginning of the innerwrap section, called so because it nests the sidebar and maincontent but is itself nested within the wrap div..-->
+      
+      <div id="innerwrap">
+      
+                  
+<!-- This is the beginning of the main column which is named so because it holds the primary content of the site..-->
+
+        <div id="main">
+         <h1>Welcome to Wordwide Apparel's intranet</h1>
+           <h2>The internal resource and information center for all employees of Wordwide Apparel </h2>
+           <p>This site is the internal resource and information center for all employees of Wordwide Apparel.
+Here you can find relevant information including the contact information for your fellow employees, 
+forms and frequently asked questions about employee benefits and much more.</p>
+
+           <p>The information on this site is provided to help you be a happier, more productive employee. 
+If you have any questions about anything on the site or other employee related questions, 
+you can also call Jen Smith at extension 535!</p>
+        </div>
+        <!-- End of Main Div-->
+
+<!-- This is the beginning of the sidebar. Although this sidebar will be positioned to the left, you want to avoid giving sidebars names such as 'left' or 'right', this avoids confusion if you decide to move the sidebar at any point.-->      
+         
+         <div id="sidebar">
+            <h2>Volunteer Opportunities</h2>
+
+            <h3>Sort home goods in Bellevue. </h3>
+            <p>Thursday, July 21, 4pm-7pm   </p>
+            <p>Sort and inspect home goods and supplies for kids. Ages 9+ welcome! Learn more.</p>
+           <h3>Prepare meals for the homebound</h3>
+            <p>Thursday, July 28, 6pm-8pm   </p>
+            <p>Prepare meals for senior citizens and individuals recovering from surgery.Learn more. </p>
+         </div>
+         <!-- End of Sidebar Div-->
+
+      </div>
+	  <!-- End of Innerwrap Div-->
+
+<!-- This is the beginning of the  footer will live at the bottom of the page, although it is still nested within the -->
+      <div id="footer"> 
+		<p>Footer </p>
+      <p>Copyroghted Worlwide Appael 2011</p>
+      <p>All content is confidential and can't be shared with people outside Appael</p>
+		
+
+    </div>
+	  <!-- End of Footer Div-->
+
+      
+   </div>
+   <!-- End of the Wrap Div-->
+
+</body>
+</html>

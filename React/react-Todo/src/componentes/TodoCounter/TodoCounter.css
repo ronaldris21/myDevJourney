@@ -1,0 +1,21 @@
+.TodoCounter-section
+{
+    background-color: lightgray;
+      width: 100%;
+      flex: auto;
+      align-items: center;
+      height: 200px;
+}
+
+.TodoCounter {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+  }
+
+
+  progress{
+    align-self: center;
+    width: 80%;
+    margin: 0 auto;
+  }

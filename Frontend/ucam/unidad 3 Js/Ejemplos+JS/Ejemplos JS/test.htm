@@ -1,0 +1,71 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<body>
+<script language=Javascript type=text/javascript>
+     function averiguarNota(examen) {
+       var resultado=0;
+       for (i=0;i<examen.elements.length;i++)
+         if ((examen.elements[i].type=="radio") &&
+            (examen.elements[i].value=="bien") &&
+            (examen.elements[i].checked))
+              resultado++;
+       alert("Acertaste "+resultado+" de 5 preguntas.");
+       return false;
+     }
+</script>
+
+<form name=examen onsubmit="return averiguarNota(this);">
+  Nombre: <input type="text" name="nombre"><br>
+  <p>La estructura a = b ? c : d; es...&nbsp; <br>
+    <input name=Respuesta1 
+      type=radio value=mal>
+    un bucle&nbsp; <br>
+    <input name=Respuesta1 type=radio 
+      value=mal>
+    una operaci&oacute;n aritm&eacute;tica&nbsp; <br>
+    <input name=Respuesta1 type=radio 
+      value=bien>
+    una condici&oacute;n&nbsp; 
+  <p>El atributo window.status contiene:&nbsp; <br>
+    <input name=Respuesta2 
+      type=radio value=bien>
+    el valor de la barra de estado&nbsp; <br>
+    <input 
+      name=Respuesta2 type=radio value=mal>
+    el valor por defecto de la barra de estado&nbsp; <br>
+    <input name=Respuesta2 type=radio value=mal>
+    ciertas caracter&iacute;sticas de la ventana&nbsp; 
+  <p>El evento load ocurre:&nbsp; <br>
+    <input name=Respuesta3 type=radio 
+      value=bien>
+    cuando termina de cargarse una p&aacute;gina&nbsp; <br>
+    <input 
+      name=Respuesta3 type=radio value=mal>
+    cuando termina de cargarse un gr&aacute;fico&nbsp; <br>
+    <input name=Respuesta3 type=radio value=mal>
+    cuando empieza a cargarse una p&aacute;gina&nbsp; 
+  <p>&iquest;Que array contiene los gr&aacute;ficos de una p&aacute;gina?&nbsp; 
+    <br>
+    <input 
+      name=Respuesta4 type=radio value=mal>
+    document.graphics&nbsp; <br>
+    <input 
+      name=Respuesta4 type=radio value=bien>
+    document.images&nbsp; <br>
+    <input 
+      name=Respuesta4 type=radio value=mal>
+    no hay ninguno&nbsp; 
+  <p>El m&eacute;todo alert sirve para:&nbsp; <br>
+    <input name=Respuesta5 
+      type=radio value=mal>
+    hacer sonar un pitido de alarma&nbsp; <br>
+    <input 
+      name=Respuesta5 type=radio value=bien>
+    lanzar una ventana con informaci&oacute;n&nbsp; <br>
+    <input name=Respuesta5 type=radio value=mal>
+    decirle al navegador que hay un problema con el c&oacute;digo&nbsp; <br>
+    <input type=submit value="Quiero saber mi nota">
+</form>
+
+</body>
+</html>

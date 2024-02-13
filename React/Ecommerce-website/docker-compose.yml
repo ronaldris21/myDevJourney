@@ -1,0 +1,25 @@
+version: "3"
+services:
+  server:
+    build:
+      context: ./server
+    restart: always
+    ports:
+      - "5004:5004"
+    environment:
+      - PORT = 5004
+      - NODE_ENV = development
+      - JWT_SECRET = cybermarket
+      - PAYPAL_CLIENT_ID=xd
+      - MONGO_URL = mongodb://192.168.0.23:27017/UCAM_WEB_ECCOMERCE
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: always
+    ports:
+      - "5000:5000"
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    

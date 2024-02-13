@@ -1,0 +1,21 @@
+ENLACES A VIDEOS DEMOSTRATIVOS:
+	
+	Video de vista cliente:
+		https://youtu.be/lgrOfv3ePLM
+
+	Video de vista administrador:
+		https://youtu.be/0xSiDjBy4Ns
+
+
+USUARIOS DE PRUEBA
+	
+	CLIENTE:
+		cliente@gmail.com
+		password: prueba
+
+	ADMINISTRADOR: 
+		mada@gmail.com
+		password: mada
+
+
+CREAR BASE DE DATOS LLAMADA: 'gamestore' e IMPORTAR gamestoreDef.sql

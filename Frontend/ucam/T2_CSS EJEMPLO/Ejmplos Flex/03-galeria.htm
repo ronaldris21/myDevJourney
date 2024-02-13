@@ -1,0 +1,68 @@
+<!DOCTYPE html><html>
+<head>
+<title>Galería</title>
+<meta charset="UTF-8">
+<style>
+
+#marco {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid black;
+}
+
+#contenedor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+}
+
+.vertical {
+  padding:3px;
+  border:1px solid black;
+  background-color:white;
+  width:300px;
+  height:400px;
+}
+
+.horizontal {
+  border:1px solid white;
+  background-color:white;
+  width:300px;
+  height:196px;
+}
+
+</style>
+</head>
+
+<body>
+<h1>Mi Galería</h1>
+
+<div  id='marco'>
+  <div id="contenedor">
+    <object class="vertical" data="http://getbootstrap.com" type="text/html"></object>
+    
+    <iframe class="vertical" src="http://vishub.org"></iframe>
+
+    <div class="vertical">
+      <video class="horizontal" controls>
+        <source src="MOOC.webm" type="video/webm">
+        <source src="MOOC.mov" type="video/mp4">
+      </video>
+      <iframe class="horizontal" src="MOOC.webm"></iframe>
+    </div>
+
+    <div class="vertical">
+      <object class="horizontal" type="image/svg+xml" 
+                                   data="Moire_Circles.svg"></object>
+      <img class="horizontal" src="Moire_Circles_100px.png">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

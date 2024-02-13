@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Cajas flexibles</title>
+	<meta charset="UTF-8" />
+<style>
+	#caja {
+		width: 800px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+	}
+	header, footer {
+		background-color: lightpink;
+	}
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+	#izquierda {
+		background-color: lightblue;
+		flex: 1;
+	}
+	#centro {
+		background-color: lightgreen;
+			flex: 2;
+	}
+	#derecha {
+		background-color: lightyellow;
+		flex: 1;
+	}
+	p {
+		margin: 0;
+	}
+</style>
+</head>
+<body>
+<div id="caja">
+	<header>
+		<p>Etiam porta sem malesuada magna mollis euismod.</p>
+	</header>
+	<main>
+		<div id="izquierda">
+			<p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui.</p>
+		</div>
+		<div id="centro">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum.</p>
+		</div>
+		<div id="derecha">
+			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		</div>
+	</main>
+	<footer>
+		<p>Aenean lacinia bibendum nulla sed consectetur.</p>
+	</footer>
+</div>
+</body>
+</html>

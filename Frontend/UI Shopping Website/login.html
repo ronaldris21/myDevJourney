@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    
+        <!-- ALL FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/root.css">
+        <!-- ALL FILES! -->
+        
+    <style>
+        form label{
+
+            font-weight: bold;
+        }
+       .form-container
+       {
+        justify-content: stretch;
+        justify-items: stretch;
+       }
+
+       #sign-up-btn{
+            background-color: white;
+            border-color: var(--hospital-green);
+            color: var(--hospital-green);
+
+       }
+
+       form a
+       {
+         text-decoration: none;
+         color: var(--hospital-green);
+         text-align: center;
+         font-size: var(--sm);
+         margin-bottom: 52px;
+       }
+
+       .secondary-button {
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <img src="Logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <form action="/" class="form">
+
+                <label for="email" class="email" class="label">Email address</label>
+                <input type="email" name="email" id="email" placeholder="camilayloasa@gmail.com" class="input input-password">
+                
+                <label for="password" class="password" class="label">Password</label>
+                <input id="password"  type="password" name="Password"  placeholder="*********" class="input input-password">
+                
+                <input type="submit" value="Log in" class="primary-btn login-btn">
+                <a href="#"> my password</a>
+            </form>
+
+            <button class="secondary-button" id="sign-up-btn">Sign up</button>
+
+
+        </div>
+    </div>
+    
+
+</body>
+</html>

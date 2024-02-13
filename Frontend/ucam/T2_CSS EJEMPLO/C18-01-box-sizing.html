@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Anchura de las cajas</title>
+	<meta charset="UTF-8" />
+	<style>
+		.cajas {
+			position: absolute;
+			width: 200px;
+			height: 90px;
+			padding: 10px;
+			border: 10px solid #333;
+		}
+		#caja-1 {
+			top: 50px;
+			left: 50px;
+            box-sizing: content-box; /* Valeur par défaut */
+		}
+		#caja-2 {
+			top: 200px;
+			left: 50px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="cajas" id="caja-1">
+		<p>&nbsp;</p>
+	</div>
+	<div class="cajas" id="caja-2">
+		<p>&nbsp;</p>
+	</div>
+</body>
+</html>

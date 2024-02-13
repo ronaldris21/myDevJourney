@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language=Javascript type=text/javascript>
+    function ejemploPrompt() {
+      var contestacion = prompt("¿Cómo te llamas?", "Ana");
+      if (contestacion)
+        alert("Hola, " + contestacion);
+    }
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2>M&eacute;todo prompt(mensaje, sugerencia)</h2>
+<p><span class="texto">Por ejemplo, el siguiente c&oacute;digo muestra un saludo 
+  s&oacute;lo si el usuario ha pulsado el bot&oacute;n de Aceptar: </span></p>
+<pre class="codigosimple"><span class="texto">
+   var contestacion = prompt("&iquest;C&oacute;mo te llamas?", "miguel&quot;);
+     if (contestacion)
+     &nbsp; alert("Hola, " + contestacion);</span></pre>
+<form>
+  <p> <span class="texto"> 
+    <input name=Boton8 onClick=ejemploPrompt() type=button value="Aquí me tienes">
+    </span></p>
+</form>
+<hr>
+</body>
+</html>
