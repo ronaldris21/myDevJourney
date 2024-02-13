@@ -1,0 +1,32 @@
+
+<!DOCTYPE html> 
+<html><head><title>Calculadora</title>
+            <meta charset="utf-8">
+  <script type="text/javascript" 
+          src="jquery-2.1.4.min.js">
+  </script>
+
+  <script type="text/javascript">
+  $(function() {
+     $("#n1").on("click", 
+      function(){ $("#n1").val("");}
+    );
+
+    $("#b1").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(num.val() * num.val());
+      }
+    );
+  });
+  </script>
+</head>
+
+<body>
+  Número:
+  <input type="text" id="n1">
+
+  <button id="b1"> x<sup>2</sup> </button>
+</body>
+</html>
+

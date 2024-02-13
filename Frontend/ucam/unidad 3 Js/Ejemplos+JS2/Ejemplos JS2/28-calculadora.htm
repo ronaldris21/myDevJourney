@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo</title>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+  var num, acc = 0, op = "";
+
+  function mas()   { acc = num.value;  op = "+"; }
+  function menos() { acc = num.value;  op = "-"; }
+
+  function calcular() {
+    if (op === "+") {num.value = (+acc + +num.value)}
+    if (op === "-") {num.value = (+acc - +num.value)}
+  }
+
+  function inic ()   {num = document.getElementById("num");}
+  function vaciar () {num.value = "";}  
+</script>
+</head>
+<body onLoad="inic()">
+  Número:<p>
+  <input type="text" size="12" id="num" onClick="vaciar()"><p>
+  <button onClick="mas()">+</button>
+  <button onClick="menos()">-</button>
+  <button onClick="calcular()">=</button>
+  </p>
+</body>
+</html>

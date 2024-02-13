@@ -1,0 +1,43 @@
+<html>
+ <body>
+ <script language="JavaScript">
+    var direccion = "pedro@yahoo.es";
+
+    function incorrecta (cadena) {
+    
+     if (cadena.length < 6) {
+      return "Longitud insuficiente";
+     }
+     if ( cadena.indexOf("@") == -1 ) {
+      return "Falta arroba en " + cadena;
+     };
+     if ( cadena.indexOf("@") != cadena.lastIndexOf("@") ) {
+      return "Sobran arrobas en " + cadena;
+     };
+     vector = cadena.split ("@");
+     usuario = vector[0];
+     dominio = vector[1];
+  
+     if (usuario.length < 1) {
+      return "Longitud insuficiente de usuario";
+     }
+
+     vector2 = dominio.split(".");
+     for (indice in vector2) {
+         if( vector2[indice].length < 2 ) {
+		return ("Dominio de longitud insuficiente");
+	 }
+     }
+ 
+     return false;
+    }
+
+    fallo = incorrecta(direccion);
+    if ( fallo ) {
+       alert ("ERROR: " + fallo);
+    } else {
+       alert ( direccion + " es una dirección de correo válida");
+    }
+ </script>
+ </body>
+</html>

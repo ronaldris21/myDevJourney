@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html><head><title>Reloj</title>
+	  <meta charset="UTF-8">
+<script type="text/javascript" 
+        src="jquery-2.1.4.min.js" >
+</script>
+
+<script type="text/javascript">
+
+  function mostrar_fecha( ) {
+    $("#fecha").html(new Date( ));  
+  }
+
+  $(function(){ 
+      // Define evento periodico, ocurre
+      // cada segundo (1000 miliseg)
+    setInterval(mostrar_fecha, 1000); 
+
+           // muestra fecha al cargar
+    mostrar_fecha();
+  });
+</script>
+</head>
+<body>
+
+  <h2>Reloj</h2>
+
+  <div id="fecha"><div>
+</body>
+</html>
+

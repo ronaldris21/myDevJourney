@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+  <TITLE>Ejemplo de imagenes</TITLE> 
+  <SCRIPT LANGUAGE="JavaScript">
+    if (document.images) {
+      var activado=new Image();
+      activado.src="encendido.gif";
+      var desactivado= new Image();
+      desactivado.src="apagado.gif";
+    }
+    function activar(nombreImagen) {
+      if (document.images) {
+        document[nombreImagen].src=activado.src; }
+    }
+    function desactivar(nombreImagen) {
+      if (document.images) {
+        document[nombreImagen].src=desactivado.src; }
+    }
+  </SCRIPT>
+</HEAD>
+<BODY>
+<A HREF="mipagina.html" onMouseOver="activar('img1');"
+  onMouseOut="desactivar('img1');">
+  <IMG NAME="img1" SRC="apagado.gif" BORDER=0 width=200 height=80>
+</A>
+<A HREF="mipagina.html" onMouseOver="activar('img2');"
+  onMouseOut="desactivar('img2');">
+  <IMG NAME="img2" SRC="apagado.gif" BORDER=0 width=200 height=80>
+</A>
+</BODY>
+</HTML>

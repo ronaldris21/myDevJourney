@@ -1,0 +1,176 @@
+<html>
+<body>
+
+<h1> Ejemplos basicos JavaScript </h1>
+
+<!-- -------- ejemplo 1: concatenación cadenas y números --- -->
+<script language="JavaScript">
+  var x1 = 2;
+  var y1 = "2";
+  function ej1() {
+    alert (x1+y1);
+  }
+</script>
+
+<table>
+<tr> 
+  <td> concatenar cadenas y números </td>
+  <td>var x1=2; var y1="2" </td>
+  <td><input type="button" value="alert (x1+y1);" onclick="ej1()"></td>
+</tr>
+
+
+<!-- -------- ejemplo 2: operador ++  --- -->
+<script language="JavaScript">
+  var x2 = 2;
+  function ej2() {
+    alert (++x2);
+  }
+</script>
+
+
+<tr> 
+  <td> operador ++ </td>
+  <td>var x2=2; </td>
+  <td><input type="button" value="alert (++x2);" onclick="ej2()"></td>
+</tr>
+
+<!-- -------- ejemplo 3: operador ++  --- -->
+<script language="JavaScript">
+  var x3 = 2;
+  function ej3() {
+    alert (x3++);
+  }
+</script>
+
+
+<tr> 
+  <td> operador ++ </td>
+  <td>var x3=2; </td>
+  <td><input type="button" value="alert (x3++);" onclick="ej3()"></td>
+</tr>
+
+
+<!-- -------- ejemplo 4: operador <  --- -->
+<script language="JavaScript">
+  var x4 = 2; var y4 = "3";
+  function ej4() {
+    alert (x4 < y4);
+  }
+</script>
+
+
+<tr> 
+  <td> operador < </td>
+  <td>var x4 = 2; var y4 = "3"; </td>
+  <td><input type="button" value="alert (x4 < y4);" onclick="ej4()"></td>
+</tr>
+
+
+<!-- -------- ejemplo 5: operador <  --- -->
+<script language="JavaScript">
+  var  x5 = 5;
+  var  y5 = "3";
+  function ej5() {
+    alert (x5 < y5);
+  }
+</script>
+
+
+<tr> 
+  <td> operador < </td>
+  <td>var x5 = 5; var y5 = "3"; </td>
+  <td><input type="button" value="alert (x5 < y5);" onclick="ej5()"></td>
+</tr>
+
+<!-- -------- ejemplo 6: bucle mal diseñado  --- -->
+<script language="JavaScript">
+  function ej6() {
+    for (i = 10; i>0; ++i) alert(i);
+  }
+</script>
+
+
+<tr> 
+  <td> bucle mal diseñado </td>
+  <td> for (i = 10; i>0; ++i) alert(i); </td>
+  <td><input type="button" value="bucle sin fin" onclick="ej6()"></td>
+</tr>
+
+<!-- -------- ejemplo 7: paso de parámetros --- -->
+<script language="JavaScript">
+  var a7 = [1,2,3,4,5];
+  var s7 = "hola"
+  var i7 = 1;
+
+  function cambia(a,s,i) {
+    a[0]=100;
+    a[1]=200;
+    s = "adios";
+    i = 100;
+  }
+  function ej7() {
+    cambia(a7,s7,i7);
+    alert("array: [" + a7[0] + ", " + a7[1] + "], cadena: " + s7 + ", entero: " + i7);
+  }
+</script>
+
+<tr> 
+  <td> paso por parámetros </td>
+  <td> var a7 = [1,2], s7 = "hola", i7 = 1; </td>
+  <td><input type="button" value="funcion que los cambia" onclick="ej7()"></td>
+</tr>
+
+<!-- -------- ejemplo 8: concatenación cadenas y números --- -->
+<script language="JavaScript">
+  var x8 = 2;
+  var y8 = "2";
+  function ej8() {
+    alert (x8+parseInt(y8));
+  }
+</script>
+
+<tr> 
+  <td> concatenar cadenas y números </td>
+  <td>var x8=2; var y8="2" </td>
+  <td><input type="button" value="alert (x8+parseInt(y8));" onclick="ej8()"></td>
+</tr>
+
+
+<!-- -------- ejemplo 9: division por cero --- -->
+<script language="JavaScript">
+  var x9 = 2;
+  var y9 = 0;
+  function ej9() {
+    alert (x9/y9);
+  }
+</script>
+
+<tr> 
+  <td> división por cero </td>
+  <td> var x9=2; var y9=0 </td>
+  <td><input type="button" value="alert (x9/y9);" onclick="ej9()"></td>
+</tr>
+
+<!-- -------- ejemplo 10: subcadenas --- -->
+<script language="JavaScript">
+  var s10 = "cadena";
+  function ej10() {
+    alert (s10.substring(2,3));
+  }
+  function ej10b() {
+    alert (s10.substr(2,3));
+  }
+</script>
+
+<tr> 
+  <td> Subcadenas </td>
+  <td> var s10 = "cadena"; </td>
+  <td><input type="button" value="alert (s10.substring(2,3))" onclick="ej10()">
+      <input type="button" value="alert (s10.substr(2,3));" onclick="ej10b()"></td>
+</tr>
+
+</table>
+
+</body>
+</html>

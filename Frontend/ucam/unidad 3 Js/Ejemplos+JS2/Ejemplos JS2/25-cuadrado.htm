@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head>
+<title>Ejemplo</title><meta charset="utf-8">
+<script type="text/javascript">
+
+function vaciar () {
+  document.getElementById("n1").value = "";
+}
+function cuadrado() {
+  var num = document.getElementById("n1");
+  num.value = num.value * num.value;
+}
+</script>
+</head><body>
+  Número:
+  <input type="text" id="n1" onclick="vaciar()">
+
+  <button onclick="cuadrado()"> x<sup>2</sup> </button>
+</body></html>

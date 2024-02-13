@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+ <TITLE>Una nueva ventana</TITLE>
+ <SCRIPT language="javascript">
+ function fondoVerde() {
+   window.document.bgColor="00ff00";
+ }
+ function fondoRojo() {
+   window.document.bgColor="ff0000"; alert (window.document.bgColor);
+ }
+ function autocambio() {
+   
+   if (window.document.bgColor=="#ff0000") {
+	window.document.bgColor="00ff00";
+   } else {
+        window.document.bgColor="ff0000";
+   }
+   setTimeout ("autocambio()",500);
+ }
+ </SCRIPT>
+</HEAD>
+<BODY><CENTER><h1><B>Cambiar el color de fondo</B></h1></CENTER>
+<input type=button onClick="fondoRojo()" value="Rojo">
+<input type=button onClick="fondoVerde()" value="Verde">
+<input type=button onClick="autocambio()" value="Auto">
+</BODY></HTML>

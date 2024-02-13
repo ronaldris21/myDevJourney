@@ -1,0 +1,19 @@
+<html>
+<head>
+<script language="JavaScript">
+  function envia(destino) {
+    var formulario = document.getElementById("loginform");
+    formulario.action = destino;
+    formulario.submit();
+  }
+</script>
+</head>
+<body>
+  <form action="" id="loginform">
+    Nombre: <input type="text" name="nombre"> </br>
+    Clave:  <input type="password" name="clave"> </br>
+    <input type="button" value="Soy alumno" onclick="envia('alumno.php')">
+    <input type="button" value="Soy profe"  onclick="envia('profesor.php')">
+  </form>
+</body>
+</html>

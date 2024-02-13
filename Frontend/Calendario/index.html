@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-purple-100 flex justify-center items-center min-h-screen">
+
+
+
+    <!-- ESTE DIV CONTIENE LOS DOS CALENDARIOS PARA HACER LAS BUSQUEDAS -->
+    <div class="bg-white text-[#181028] p-8  shadow-lg rounded-xl max-w-md md:max-w-lg relative calendar-container">
+
+        <div class="circle-background circle-250"></div>
+        <div class="circle-background circle-150"></div>
+        <div class="circle-background circle-50"></div>
+
+        <!-- 2 calendar -->
+        <section class="relative flex gap-x-5  m-0">
+
+
+            <!-- LEFT CALENDAR -->
+            <section class="w-full ">
+                <section class="flex relative mb-2">
+                    <button class="last-month-icon absolute align-middle mx-2 -left-4 font-bold" id="btnLastMonth">        <   </button>
+                    <p class="text-center w-full font-bold" id="month-left-name">January</p>
+                </section>
+
+                <!-- CALENDAR CONTENT -->
+                <section class="w-full  m-0 p-2 ">
+
+                    <!-- CALENDAR HEADER -->
+                    <section class="grid grid-cols-7 text-center font-bold">
+                        <span class="calendar-span">Su</span>
+                        <span class="calendar-span">Mo</span>
+                        <span class="calendar-span">Tu</span>
+                        <span class="calendar-span">We</span>
+                        <span class="calendar-span">Th</span>
+                        <span class="calendar-span">Fr</span>
+                        <span class="calendar-span">Sa</span>
+                    </section>
+                    <!-- CALENDAR BODY -->
+                    <section class="grid grid-cols-7 text-center h-40" id="calendar-left">
+                        <!-- AUTOGENERATE DAYS -->
+                    </section>
+
+                </section>
+            </section>
+
+
+            <!-- RIGHT CALENDAR -->
+            <section class="w-full ">
+                <section class="flex relative mb-2">
+                    <p class="text-center w-full  font-bold" id="month-right-name">January</p>
+                    <button class="last-month-icon absolute align-middle mx-2 -right-4 font-bold" id="btnNextMonth">        >   </button>
+                </section>
+
+                <!-- CALENDAR CONTENT -->
+                <section class="w-full  m-0 p-2 ">
+
+                    <!-- CALENDAR HEADER -->
+                    <section class="grid grid-cols-7 text-center font-bold">
+                        <span class="calendar-span">Su</span>
+                        <span class="calendar-span">Mo</span>
+                        <span class="calendar-span">Tu</span>
+                        <span class="calendar-span">We</span>
+                        <span class="calendar-span">Th</span>
+                        <span class="calendar-span">Fr</span>
+                        <span class="calendar-span">Sa</span>
+                    </section>
+                    <!-- CALENDAR BODY -->
+                    <section class="grid grid-cols-7 text-center h-40" id="calendar-right">
+                        <!-- AUTOGENERATE DAYS -->
+                    </section>
+
+                </section>
+            </section>
+
+            <!-- End 2 calendar -->
+        </section>
+
+        <!-- Calendar pickers -->
+        <section class="grid place-items-center gap-x-8 mt-4">
+            <p class="text-1" id="today">Today</p>
+
+        </section>
+        <p class="text-1 text-center" id="day-selected">Selecciona un día del calendario</p>
+
+    </div>
+
+    <script src="calendar.js"></script>
+</body>
+
+</html>

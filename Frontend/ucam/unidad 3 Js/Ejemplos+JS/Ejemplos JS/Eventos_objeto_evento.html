@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript" defer="defer">
+  function clickImagen(e) 
+  { 
+    cadena =  "Evento: " + e.type  + "\n";
+    cadena += "Which:  " + e.which + "\n";
+    cadena += "Button: " + e.button + "\n";
+    cadena += "Target: " + e.target + "\n";
+    cadena += "screenX:" + e.screenX + "\n";
+    cadena += "screenY:" + e.screenY + "\n";
+    alert (cadena);
+  }
+</script>
+</head> 
+<body>
+  Click sobre la imagen: </br>
+  <img src="encendido.gif" id="imagen" 
+	onClicK="clickImagen(event)"
+
+   />
+</body>
+</html>

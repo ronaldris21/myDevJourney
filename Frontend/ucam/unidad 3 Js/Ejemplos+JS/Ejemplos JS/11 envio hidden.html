@@ -1,0 +1,55 @@
+
+<html>
+
+<body>
+   <table>
+        <tr>
+		<td> Nombre </td>
+		<td> <input type="text" id="nombre" value=""> </td>
+	</tr>
+	<tr> 
+		<td> Ciudad </td> 
+		<td> 
+			<select id="combo"> 
+			<option value="01"> Alicante </option>
+			<option value="02"> Málaga </option>			
+			<option value="03"> Barcelona </option>
+			<option value="04"> Málaga </option>
+			<option value="05"> Murcia </option>
+		       </select>
+		</td>
+	</tr>
+	<tr>
+		<td> Teléfono </td>
+		<td> <input type="text" id="numero" value=""> </td>
+	</tr>
+	<tr>
+		<td> Comentario </td>
+		
+    		<td> 
+      		<textarea id="comentario" cols="20" rows="5"></textarea>
+    		</td>
+	</tr>     
+   </table>  
+   <input type="button" value="enviar" onClick="enviar()">
+
+<form action="9 recibir.html" method="GET" id="formulario">
+  <input type="hidden" name="destino"   id="destino"   value="">
+  <input type="hidden" name="contenido" id="contenido" value="">
+</form>
+
+
+<script language="JavaScript">
+  function enviar() {
+     var nombre = document.getElementById("nombre").value;
+     var numero = document.getElementById("numero").value;
+     var combo  = document.getElementById("combo");
+     var txtcombo = combo.options[combo.selectedIndex].value;
+     document.getElementById("destino").value = nombre + "-" + txtcombo + "-" + numero;
+     document.getElementById("contenido").value = document.getElementById("comentario").value;
+     document.getElementById("formulario").submit();
+  }
+</script>
+
+</body>
+</html>

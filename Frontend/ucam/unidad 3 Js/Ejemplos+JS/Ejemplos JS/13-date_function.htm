@@ -1,0 +1,26 @@
+<!DOCTYPE html><html>
+<head>
+<title>Ejemplo de función</title>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+
+function mostrar_fecha( ) {
+  var cl = document.getElementById("fecha");
+  cl.innerHTML = new Date( );  
+}
+</script>
+
+</head>
+
+<body>
+<h2>La fecha y la hora son:</h2>
+
+<div id="fecha"></div>
+
+<script type="text/javascript">
+  mostrar_fecha( ); // Invocar función
+</script>
+
+</body>
+</html>

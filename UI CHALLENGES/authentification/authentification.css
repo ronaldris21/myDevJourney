@@ -1,0 +1,108 @@
+* {
+    --mainColor: #1a62bf;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.border-color-darkblue {
+    border-color: var(--mainColor) !important;
+}
+
+.border-color-lightgray {
+    border-color: gray !important;
+}
+
+main {
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--mainColor);
+    font-size: 0.7em;
+}
+
+.user-details * {
+    padding: 0px;
+    margin: 0px;
+}
+
+.user-details :nth-child(1) {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-details :nth-child(2) {
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.user-details :nth-child(3) {
+    font-size: 10px;
+    color: lightgray;
+}
+
+.userCircle {
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+
+.card-Img-text {
+    top: 40px;
+    width: 70%;
+    min-height: 60%;
+}
+
+.mainContainer {
+    box-sizing: content-box;
+    height: 80vh !important;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.section-left {
+    box-sizing: content-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.section-right {
+    margin: 0 auto;
+}
+
+.logo-title {
+    margin-top: 56px;
+    color: var(--mainColor) !important;
+}
+
+.card-title{
+    color: var(--mainColor);
+}
+
+.img-main{
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.boxsizing {
+    box-sizing: content-box;
+}
