@@ -1,0 +1,15 @@
+NODEJS - 8 Weeks
+
+MODULES
+    WEEK        TIME        MODULE 
+    1           1           JAVASCRIPT
+    2           0.5         Async programming
+    2           0.5         Typescript
+    3           0           Git
+    3           1           Databases
+    4           1           REST 
+    5           1           GraphQL
+    6-7         2           NestJS
+    8           1          Testing 
+    8           1          Serverless (optional)
+    
