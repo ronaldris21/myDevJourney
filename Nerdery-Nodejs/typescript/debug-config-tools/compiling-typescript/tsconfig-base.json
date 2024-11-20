@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "declaration": true, // Governs the creation of d.ts files, 
+        "strict": true,
+        "noUnusedLocals": false, // Declaring a local and not using it will cause a compilation error
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "noImplicitAny": false,
+        "watch": true,
+        "strictNullChecks": false,
+        "listEmittedFiles":true,
+        "listFiles":true,
+        "incremental": true,
+        "tsBuildInfoFile": "./build/cache/.tsbuildinfo"
+    }
+}

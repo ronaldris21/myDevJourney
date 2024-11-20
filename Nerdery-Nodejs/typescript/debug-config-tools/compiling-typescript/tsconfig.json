@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig-base.json",
+  "references": [ 
+    {
+      "path": "./src/server"
+    },
+    {
+      "path": "./src/client"
+    }
+    
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "rootDir": "./src",
+    "outDir": "./build",
+  },
+  "files": [
+      /* Empty files array specifies that no files should be compiled directly as part of this master package */
+  ]
+}

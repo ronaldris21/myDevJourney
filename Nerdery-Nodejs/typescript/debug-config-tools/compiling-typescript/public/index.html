@@ -1,0 +1,87 @@
+﻿<head>
+
+    <title>Educational Resources Access</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container mt-3">
+
+        <div class="header">
+
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm">
+                <h5 class="my-0 mr-md-auto font-weight-normal">
+                    Educational Resources Access
+                </h5>
+                <nav class="my-2 my-md-0 mr-md-3">
+                    <a class="p-2 text-dark" href="#">Archive</a>
+                    <a class="p-2 text-dark" href="#">Search</a>
+                </nav>
+                <a class="btn btn-outline-primary" href="#">Sign up</a>
+            </div>
+
+        </div>
+
+
+        <section class="col-md-8 order-md-1 mt-4 mb-5">
+
+            
+            <form id="QuestionForm">
+
+                <h3 class="mb-3">Ask a Question</h3>
+
+                    <section class="mb-4">
+
+                        <label for="title">Question Title</label>
+
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="My title">
+
+                        <div class="invalid-feedback">
+
+                            Valid title is required.
+
+                        </div>
+
+                    </section>
+
+                    <section class="mb-2">
+
+                        <label for="contents">Your Question</label>
+
+                        <textarea type="text" class="form-control" id="contents">My Question </textarea>
+
+                    </section>                
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+        </section>
+
+
+
+        <section class="col-md-8 order-md-1 mt-4">
+
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+
+                    <span>New Questions</span>
+
+                    <span class="badge badge-secondary badge-pill">2</span>
+
+                </h4>
+
+                <ul class="list-group mb-3" id="Questions">
+
+
+                    
+                </ul>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

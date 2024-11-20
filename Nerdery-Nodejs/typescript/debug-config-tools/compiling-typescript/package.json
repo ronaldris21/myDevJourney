@@ -1,0 +1,29 @@
+{
+  "name": "compiling-type-script2",
+  "version": "0.0.0",
+  "description": "CompilingTypeScript2",
+  "main": "server.js",
+  "author": {
+    "name": "Daniel 'Code Whisperer' Stern"
+  },
+  "scripts": {
+    "build-full": "tsc --build",
+    "build-server": "tsc -p src/server",
+    "build-client": "tsc -p src/client",
+    "watch-client": "tsc -p src/client --watch",
+    "build": "tsc -p tsconfig.json",
+    "serve": "node build/server/server.js",
+    "start": "npm run build-full && npm run serve",
+    "debug": "node --inspect=9227 build/server/server.js",
+    "lint": "eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/node": "^8.10.58",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "eslint": "^6.6.0",
+    "express": "^4.17.1",
+    "typescript": "^3.2.2"
+  }
+}
