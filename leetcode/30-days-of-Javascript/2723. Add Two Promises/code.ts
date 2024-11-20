@@ -1,0 +1,11 @@
+type P = Promise<number>
+
+async function addTwoPromises(promise1: P, promise2: P): P {
+    // return await promise1 + await promise2;
+    return promise1.then(result1 => promise2.then(result2 => result1 + result2));
+};
+
+/**
+ * addTwoPromises(Promise.resolve(2), Promise.resolve(2))
+ *   .then(console.log); // 4
+ */
