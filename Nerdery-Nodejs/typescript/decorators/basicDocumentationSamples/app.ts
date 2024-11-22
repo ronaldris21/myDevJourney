@@ -15,6 +15,8 @@ let point = new Point(4, 5);
 console.log(point);
 console.log(point.x);
 console.log(point.y);
+console.log(point.y);
+
 
 
 
