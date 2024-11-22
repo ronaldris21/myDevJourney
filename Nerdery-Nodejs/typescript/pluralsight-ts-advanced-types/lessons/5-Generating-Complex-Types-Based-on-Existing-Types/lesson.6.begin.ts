@@ -1,7 +1,10 @@
 import { TextLayer, ImageLayer } from "./types";
 
+type LayerCombine = TextLayer & ImageLayer;
+type IgnoredPropertys = "id" | "maxBounds" | "position" | "meta";
+
 type FieldDescriptions = {
-  [key in keyof (TextLayer & ImageLayer)]: string;
+  [k in Exclude<LayerCombine, IgnoredPropertys>]: string;
 };
 
 const fieldDescriptions: FieldDescriptions = {

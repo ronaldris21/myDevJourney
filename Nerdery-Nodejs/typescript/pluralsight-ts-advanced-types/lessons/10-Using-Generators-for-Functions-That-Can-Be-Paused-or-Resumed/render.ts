@@ -52,7 +52,7 @@ async function renderText(canvas: Canvas, layer: TextLayer) {
 }
 
 async function exportPng(canvas: Canvas, skipOpen: boolean) {
-  return new Promise(resolve => {
+  return new Promise<void>(resolve => {
     const outFolder = __dirname + "/../../out";
     const fileName = `${outFolder}/${Date.now()}.png`;
 
@@ -67,7 +67,7 @@ async function exportPng(canvas: Canvas, skipOpen: boolean) {
       if (skipOpen) {
         return resolve();
       }
-      open(fileName).then(resolve);
+      open(fileName).then(()=>resolve());
     });
   });
 }
@@ -84,9 +84,9 @@ async function renderAsync(project: Project, skipOpen: boolean) {
       if (isImageLayer(layer)) {
         await renderImage(canvas, layer);
       }
-    } catch (err) {
+    } catch (err ) {
       console.error(`Could not render layer with id ${layer.id}:`);
-      console.error(err.stack);
+      // console.error(err?.stack ? " " : "");
       process.exit(1);
     }
   }

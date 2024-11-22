@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "run-generator-lesson-5": "cross-env ROOT=./ ts-node ./lessons/10-Using-Generators-for-Functions-That-Can-Be-Paused-or-Resumed/lesson.5.ts"
+    "run-generator-lesson-4": "cross-env ROOT=./ ts-node ./lessons/10-Using-Generators-for-Functions-That-Can-Be-Paused-or-Resumed/lesson.4.end.ts"
   },
   "devDependencies": {
     "@types/node": "^12.7.11"
   },
   "dependencies": {
-    "canvas": "^2.6.0",
+    "canvas": "^2.11.2",
     "cross-env": "^6.0.3",
     "image-size": "^0.8.3",
     "open": "^6.4.0",
