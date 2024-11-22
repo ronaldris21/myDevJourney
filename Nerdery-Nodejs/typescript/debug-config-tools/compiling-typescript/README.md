@@ -17,12 +17,15 @@
 ## Exploring the Project
 
 ### /public
+
 Contains HTML file which is served to the user - aggregates references to generated .js files.
 
 ### /src
+
 Contains the non-compiled TypeScript code. This code becomes JavaScript that the browser can work with.
 
+### build Typescript files on project only
 
-
+`tsc --p ./server/tsconfig.json`
 
 <!-- Encontrado en: https://github.com/danielstern/compiling-typescript.git -->

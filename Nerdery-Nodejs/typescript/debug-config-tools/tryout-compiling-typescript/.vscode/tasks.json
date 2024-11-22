@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ris tsc: build - server/tsconfig.json",
+      "type": "shell",
+      "command": "tsc",
+      "args": ["-p", "server/tsconfig.json", "--watch"],
+      "problemMatcher": ["$tsc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}

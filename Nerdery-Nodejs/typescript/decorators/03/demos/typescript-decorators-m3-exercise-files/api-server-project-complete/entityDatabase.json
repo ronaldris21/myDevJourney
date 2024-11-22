@@ -1,0 +1,51 @@
+{
+    "people": {
+        "69264960-aeb7-4b66-a3ee-ca6cdf78f042": {
+            "id": "69264960-aeb7-4b66-a3ee-ca6cdf78f042",
+            "firstName": "David",
+            "lastName": "Tucker",
+            "email": "david@globomantics.com",
+            "department": "IT",
+            "mobileNumber": "+15555555",
+            "age": 38
+        },
+        "42491edc-0e3d-474b-a19b-9e510b693da9": {
+            "id": "42491edc-0e3d-474b-a19b-9e510b693da9",
+            "firstName": "David",
+            "lastName": "Tucker",
+            "email": "david@globomantics.com",
+            "department": "IT",
+            "mobileNumber": "+15555555",
+            "age": 38
+        }
+    },
+    "users": {
+        "david": {
+            "password": "mypassword",
+            "permissions": {
+                "people": [
+                    "reader",
+                    "writer"
+                ]
+            }
+        },
+        "jessi": {
+            "password": "mypassword",
+            "permissions": {
+                "people": [
+                    "reader"
+                ]
+            }
+        },
+        "dallin": {
+            "password": "mypassword",
+            "permissions": {
+                "people": [
+                    "reader",
+                    "writer",
+                    "deleter"
+                ]
+            }
+        }
+    }
+}

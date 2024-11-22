@@ -1,4 +1,4 @@
-import axios, { AxiosError   } from 'axios';
+import axios, { AxiosError } from 'axios';
 
 import { apiUrl, parseList } from './config';
 import {
@@ -8,7 +8,11 @@ import {
   ShippingStatus,
 } from '../interfaces';
 
-const getHeroAsync = async function(email: string) {
+const funcAsync = async (data: any): Promise<void> => {
+
+}
+
+const getHeroAsync = async function (email: string) {
   try {
     const response = await axios.get(`${apiUrl}/heroes?email=${email}`);
     const data = parseList<Hero>(response);
@@ -19,7 +23,7 @@ const getHeroAsync = async function(email: string) {
   }
 };
 
-const getOrdersAsync = async function(heroId: number) {
+const getOrdersAsync = async function (heroId: number) {
   try {
     const response = await axios.get(`${apiUrl}/orders/${heroId}`);
     const data = parseList<Order>(response);
@@ -29,7 +33,7 @@ const getOrdersAsync = async function(heroId: number) {
   }
 };
 
-const getAccountRepAsync = async function(heroId: number) {
+const getAccountRepAsync = async function (heroId: number) {
   try {
     const response = await axios.get(`${apiUrl}/accountreps/${heroId}`);
     const data = parseList<AccountRepresentative>(response);
@@ -39,7 +43,7 @@ const getAccountRepAsync = async function(heroId: number) {
   }
 };
 
-const getShippingStatusAsync = async function(orderNumber: number) {
+const getShippingStatusAsync = async function (orderNumber: number) {
   try {
     const response = await axios.get(
       `${apiUrl}/shippingstatuses/${orderNumber}`,
@@ -51,7 +55,7 @@ const getShippingStatusAsync = async function(orderNumber: number) {
   }
 };
 
-const getHeroTreeAsync = async function(email: string) {
+const getHeroTreeAsync = async function (email: string) {
   /**
    * Level 1 - Get the hero record
    */
