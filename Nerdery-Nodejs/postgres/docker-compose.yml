@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  postgres_container:
+    image: postgres:17
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dvdrental
+    # networks:
+    #   my_network:
+    #     ipv4_address: 172.22.0.2  # Assign a static IP address
+    ports:
+      - "5432:5432"
+
+  pgadmin4_container:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    # networks:
+    #   - my_network
+    ports:
+      - "5050:80"
+# networks:
+#   my_network:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 172.22.0.0/16  # Define a subnet for the network
