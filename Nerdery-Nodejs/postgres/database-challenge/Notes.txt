@@ -1,0 +1,47 @@
+Pagination in database:???
+
+MAIN IMAGE APPROACH??   
+    TABLES product, product_image
+        CASE 1: Better to have a product_image.is_main Boolean
+        CASE 2: product.main_image_id Reference on product_image table?  
+
+Index on category name! Because it's going to be use a lot to filter data
+
+
+
+USERS*
+
+RESET_PASSWORD*
+
+PRODUCT
+
+CART 
+
+ORDER 
+
+ORDER_PRODUCTS
+
+CART_PRODUCTS
+
+
+ROLE_PERMISSIONS
+    role_id
+    entity
+    action
+
+PRODUCTS 
+
+PRODUCT DETAILS???
+
+PRODUCT_LIKES
+    user_id
+    product_id
+    created_at
+
+
+
+
+
+
+
+
