@@ -8,20 +8,10 @@ MAIN IMAGE APPROACH??
 Index on category name! Because it's going to be use a lot to filter data
 
 
+Categorias dentro de categorias????
+    FUTBOL
+    BASKETBOL
 
-USERS*
-
-RESET_PASSWORD*
-
-PRODUCT
-
-CART 
-
-ORDER 
-
-ORDER_PRODUCTS
-
-CART_PRODUCTS
 
 
 ROLE_PERMISSIONS
@@ -29,19 +19,9 @@ ROLE_PERMISSIONS
     entity
     action
 
-PRODUCTS 
-
-PRODUCT DETAILS???
-
-PRODUCT_LIKES
-    user_id
-    product_id
-    created_at
+TABLA DE PERMISOS?????
 
 
-
-
-
-
+Al momento de comprar... CART_ITEMS References to the product OR the Product STOCK===
 
 
