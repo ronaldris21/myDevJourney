@@ -1,0 +1,179 @@
+PERMISSIONS
+-
+id UUID PK
+endpoint_name VARCHAR(50) 
+action_name VARCHAR(25) 
+
+ROLE_PERMISSIONS
+-
+role_id UUID  PK FK > ROLES.id
+permission_id UUID PK FK > PERMISSIONS.id
+
+ROLES
+-
+id UUID PK
+name VARCHAR(25)
+
+
+USER_ROLES
+-
+user_id UUID PK FK > USERS.id
+role_id UUID PK FK > ROLES.id
+
+
+
+
+
+
+USERS
+-
+id UUID PK
+last_name VARCHAR(50)
+first_name VARCHAR(50)
+email VARCHAR(255)
+password_hash VARCHAR(255)
+created_at TIMESTAMP
+
+
+REFRESH_TOKENS
+-
+id UUID PK
+user_id UUID FK > USERS.id
+refresh_token VARCHAR(500)
+valid_until TIMESTAMP
+
+
+
+PASSWORD_RESETS
+-
+reset_token UUID PK
+user_id UUID FK > USERS.id
+valid_until TIMESTAMP
+created_at TIMESTAMP
+password_updated_at TIMESTAMP
+already_used BOOLEAN
+
+
+
+CATEGORIES
+-
+id UUID pk
+name VARCHAR(50) INDEX
+parent_category_id UUID FK > CATEGORIES.id
+
+
+
+PRODUCTS
+-
+id UUID PK
+name VARCHAR(255)
+gender GENDER_TYPE
+thumbnail_url VARCHAR(255)
+category_id UUID FK > CATEGORIES.id
+description TEXT
+is_enable BOOLEAN
+is_deleted boolean
+likes_count INT
+min_price DECIMAL(10,2)
+max_price DECIMAL(10,2)
+created_at TIMESTAMP
+updated_at TIMESTAMP
+
+
+
+PRODUCT_VARIATIONS
+-
+id UUID PK
+product_id UUID FK > PRODUCTS.id
+price DECIMAL(10,2)
+discount DECIMAL(10,2)
+discount_type VARCHAR(1)
+size VARCHAR(10)
+color VARCHAR(20)
+stock INT
+stock_refilled_at TIMESTAMP
+is_enable BOOLEAN
+is_deleted boolean
+
+
+
+VARIATION_IMAGES
+-
+id UUID PK
+product_variation_id UUID FK > PRODUCT_VARIATIONS.id
+image_url VARCHAR(255)
+
+
+ORDERS
+-
+id UUID PK
+user_id UUID FK > USERS.id
+currency VARCHAR(3)
+sub_total DECIMAL(10,2)
+discount DECIMAL(10,2)
+total DECIMAL(10,2)
+status VARCHAR(50)
+created_at TIMESTAMP
+updated_at TIMESTAMP
+is_deleted BOOLEAN
+is_stock_reserved BOOLEAN
+
+
+
+ORDER_ITEMS
+-
+id UUID PK
+order_id UUID FK > ORDERS.id
+product_variation_id UUID FK > PRODUCT_VARIATIONS.id
+unit_price DECIMAL(10,2)
+quantity INT
+sub_total DECIMAL(10,2)
+discount DECIMAL(10,2)
+total DECIMAL(10,2)
+
+
+
+CART_ITEMS
+-
+user_id UUID PK FK > USERS.id
+product_variation_id UUID PK FK > PRODUCT_VARIATIONS.id
+quantity INT
+
+
+
+PRODUCT_LIKES
+-
+user_id UUID PK FK > USERS.id
+product_id UUID PK FK > PRODUCTS.id
+liked_at TIMESTAMP
+
+
+
+STRIPE_PAYMENTS
+-
+id UUID PK
+order_id UUID FK > ORDERS.id
+amount DECIMAL(10,2)
+currrency VARCHAR(3)
+stripe_payment_id VARCHAR(255) 
+webhook_payment_intent VARCHAR(23)
+webhook_data JSONB
+created_at TIMESTAMP
+updated_at TIMESTAMP
+
+
+
+ORDER_INCIDENTS
+-
+id UUID PK
+manager_id UUID fk > USERS.id
+client_id UUDI fk > USERS.id
+order_id UUID fk > ORDERS.id
+with_restock boolean
+reason TEXT 
+currency VARCHAR(3)
+total_price DECIMAL(10,2)
+created_at TIMESTAMP
+
+
+//POSITION({"ROLES":{"x":39.551998053982174,"y":399.10534362395686,"w":230},"USERS":{"x":380.1000219249703,"y":30.20000188827501,"w":230},"PASSWORD_RESETS":{"x":-225.79999601364176,"y":-74.49996485710483,"w":254},"PRODUCTS":{"x":1325.399926147468,"y":965.0229376652399,"w":230},"ORDERS":{"x":1332.699998006687,"y":155.8001174662881,"w":238},"ORDER_ITEMS":{"x":1635.0998488330983,"y":468.0000293731662,"w":262},"CART_ITEMS":{"x":682.5829664483723,"y":297.211037751775,"w":262},"PRODUCT_LIKES":{"x":118.42105430531063,"y":1006.4249638954618,"w":230},"STRIPE_PAYMENTS":{"x":1798.999833202378,"y":-10.799877471935474,"w":278},"REFRESH_TOKENS":{"x":61,"y":-189,"w":230},"ORDER_INCIDENTS":{"x":954.5134062733389,"y":-274.13973579054965,"w":230},"PERMISSIONS":{"x":48,"y":603,"w":230},"ROLE_PERMISSIONS":{"x":-295.42559646658816,"y":471.823101987544,"w":230},"USER_ROLES":{"x":-270,"y":274,"w":230},"PRODUCT_VARIATIONS":{"x":932.5593237731771,"y":592.4699974552028,"w":246},"VARIATION_IMAGES":{"x":523.599954880725,"y":678.7900002819956,"w":262},"CATEGORIES":{"x":1700.9296804991334,"y":842.6799131453954,"w":246}})
