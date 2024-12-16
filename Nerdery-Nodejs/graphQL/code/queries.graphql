@@ -1,0 +1,300 @@
+# 3.1.4 Paginating through a list of records
+query OrgRepoConnectionExample {
+  organization(login: "jscomplete") {
+    repositories(first: 10, orderBy: { field: CREATED_AT, direction: ASC }) {
+      edges {
+        cursor
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+
+# Looking for an personID
+{
+  person(personID: 4) {
+    name
+    birthYear
+    homeworld {
+      name
+    }
+    filmConnection {
+      films {
+        title
+      }
+    }
+  }
+}
+#  -----Listing 3.18 The @include directive (az.dev/gia)
+
+query OrgInfo($orgLogin: String!, $fullDetails: Boolean!) {
+  organization(login: $orgLogin) {
+    name
+    description
+    websiteUrl @include(if: $fullDetails)
+  }
+}
+# ----Listing 3.25 Using fragments to minimize repetition (az.dev/gia)
+
+query MyRepos {
+  viewer {
+    ownedRepos: repositories(affiliations: OWNER, first: 10) {
+      ...repoInfo
+    }
+    orgsRepos: repositories(affiliations: ORGANIZATION_MEMBER, first: 10) {
+      ...repoInfo
+    }
+  }
+}
+fragment repoInfo on RepositoryConnection {
+  nodes {
+    nameWithOwner
+    description
+    forkCount
+  }
+}
+
+# Listing 3.5 First 10 repos under an organization (az.dev/gia)   - orderBy
+query orgReposByName {
+  organization(login: "jscomplete") {
+    repositories(first: 10, orderBy: { field: NAME, direction: ASC }) {
+      nodes {
+        name
+      }
+    }
+  }
+}
+
+interface Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+}
+
+type Human implements Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+  starships: [Starship]
+  totalCredits: Int
+}
+
+type Droid implements Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+  primaryFunction: String
+}
+
+# A character from the Star Wars universe
+type Character {
+  "The name of the character."
+  name: String!
+}
+
+# The episodes in the Star Wars trilogy
+enum Episode {
+  "Star Wars Episode IV: A New Hope, released in 1977."
+  NEWHOPE
+  "Star Wars Episode V: The Empire Strikes Back, released in 1980."
+  EMPIRE
+  "Star Wars Episode VI: Return of the Jedi, released in 1983."
+  JEDI
+}
+
+# The query type, represents all of the entry points into our object graph
+type Query {
+  """
+  Fetches the hero of a specified Star Wars film.
+  """
+  hero(
+    "The name of the film that the hero appears in."
+    episode: Episode
+  ): Character
+}
+
+# Examples
+# Examples: https://spec.graphql.org/draft/#sec-Validation
+# For this section of this schema, we will assume the following type system in order to demonstrate examples:
+# For this section of this schema, we will assume the following type system in order to demonstrate examples:
+
+type Query {
+  dog: Dog
+  findDog(searchBy: FindDogInput): Dog
+}
+
+enum DogCommand {
+  SIT
+  DOWN
+  HEEL
+}
+
+type Dog implements Pet {
+  name: String!
+  nickname: String
+  barkVolume: Int
+  doesKnowCommand(dogCommand: DogCommand!): Boolean!
+  isHouseTrained(atOtherHomes: Boolean): Boolean!
+  owner: Human
+}
+
+interface Sentient {
+  name: String!
+}
+
+interface Pet {
+  name: String!
+}
+
+type Alien implements Sentient {
+  name: String!
+  homePlanet: String
+}
+
+type Human implements Sentient {
+  name: String!
+  pets: [Pet!]
+}
+
+enum CatCommand {
+  JUMP
+}
+
+type Cat implements Pet {
+  name: String!
+  nickname: String
+  doesKnowCommand(catCommand: CatCommand!): Boolean!
+  meowVolume: Int
+}
+
+union CatOrDog = Cat | Dog
+union DogOrHuman = Dog | Human
+union HumanOrAlien = Human | Alien
+
+input FindDogInput {
+  name: String
+  owner: String
+}
+
+{
+  allVehicles {
+    totalCount
+    edges {
+      node {
+        name
+        costInCredits
+      }
+    }
+  }
+}
+
+# LEARNING TO USE EDGE ON GRAPHQL
+# LEARNING TO USE EDGE ON GRAPHQL
+# LEARNING TO USE EDGE ON GRAPHQL
+
+type User {
+  id: ID!
+  name: String!
+  post: PostConnection!
+}
+
+type PostConnection {
+  edges: [PostEdge]!
+  pageInfo: PageInfo!
+}
+
+type PostEdge {
+  node: Post!
+  cursor: String!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+# query:
+{
+  allVehicles {
+    totalCount
+    edges {
+      node {
+        name
+        costInCredits
+      }
+    }
+  }
+}
+
+# result:
+
+# {
+#   "data": {
+#     "allVehicles": {
+#       "totalCount": 39,
+#       "edges":[
+#          {
+#           "node": {
+#             "name": "Sand Crawler",
+#             "costInCredits": 150000
+#           }
+#         },
+#         {
+#           "node": {
+#             "name": "T-16 skyhopper",
+#             "costInCredits": 14500
+#           }
+#         }
+#       ]
+#     }
+#   }
+# }
+
+# Getting totals
+{
+  vehicle(id: "dmVoaWNsZXM6NA==") {
+    name
+    costInCredits
+    manufacturers
+    pilotConnection {
+      totalCount
+    }
+    filmConnection {
+      totalCount
+    }
+  }
+}
+
+# TODOS LOS AUTOS DE LAS PELICULAS DONDE SALE EL AUTO CON ID: dmVoaWNsZXM6NA==
+
+{
+  vehicle(id: "dmVoaWNsZXM6NA==") {
+    name
+    costInCredits
+    manufacturers
+    filmConnection {
+      totalCount
+      films {
+        title
+        vehicleConnection {
+          vehicles {
+            name
+          }
+        }
+      }
+    }
+  }
+}

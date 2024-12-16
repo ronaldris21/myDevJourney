@@ -1,0 +1,26 @@
+{
+  user {
+    id
+    name
+    friends(first: 10, after: "opaqueCursor") {
+      edges {
+        cursor
+        node {
+          id
+          name
+        }
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}
+
+
+# multiple users data queries
+{
+  usernames(usernames: ["zuck", "moskov"]) {
+    id
+  }
+}

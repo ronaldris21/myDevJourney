@@ -1,0 +1,94 @@
+# For example, let’s try to describe an email app in plain English:
+
+#     A user can have multiple email accounts
+#     Each email account has an address, inbox, drafts, deleted items, and sent items
+#     Each email has a sender, receive date, subject, and body
+#     Users cannot send an email without a recipient address
+
+# https://graphql.org/learn/thinking-in-graphs
+
+# //Website solution:
+
+# --
+# --
+# --
+# Fetch the number of unread emails in my inbox for all my accounts
+{
+  accounts {
+    inbox {
+      unreadEmailCount
+    }
+  }
+}
+
+# Fetch the “preview info” for the first 20 drafts in the main account
+{
+  mainAccount {
+    drafts(first: 20) {
+      ...previewInfo
+    }
+  }
+}
+
+fragment previewInfo on Email {
+  subject
+  bodyPreviewSentence
+}
+
+# CHAT GPT
+# CHAT GPT
+# CHAT GPT
+# CHAT GPT
+# GraphQL Schema for the Email App
+
+type Query {
+  user(id: ID!): User
+  emailAccount(id: ID!): EmailAccount
+  email(id: ID!): Email
+}
+
+type Mutation {
+  sendEmail(input: SendEmailInput!): SendEmailPayload!
+}
+
+# User schema: A user can have multiple email accounts
+type User {
+  id: ID!
+  name: String!
+  emailAccounts: [EmailAccount!]!
+}
+
+# EmailAccount schema: Each email account has an address and various folders
+type EmailAccount {
+  id: ID!
+  address: String!
+  inbox: [Email!]!
+  drafts: [Email!]!
+  deletedItems: [Email!]!
+  sentItems: [Email!]!
+}
+
+# Email schema: Each email has a sender, receive date, subject, and body
+type Email {
+  id: ID!
+  sender: String!
+  recipients: [String!]!
+  receiveDate: String!
+  subject: String!
+  body: String!
+}
+
+# Input for sending an email
+input SendEmailInput {
+  fromAccountId: ID!
+  recipients: [String!]!
+  subject: String!
+  body: String!
+}
+
+# Payload for the sendEmail mutation
+type SendEmailPayload {
+  success: Boolean!
+  message: String
+  email: Email
+}

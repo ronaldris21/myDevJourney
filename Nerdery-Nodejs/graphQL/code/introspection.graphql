@@ -1,0 +1,31 @@
+# Schema introspection
+
+query {
+  __schema {
+    types {
+      name
+    }
+  }
+}
+
+# Schema introspection
+
+query {
+  __schema {
+    types {
+      name
+      fields {
+        name
+        type {
+          name
+          fields {
+            name
+            args {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

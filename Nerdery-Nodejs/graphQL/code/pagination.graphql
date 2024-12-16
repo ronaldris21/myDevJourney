@@ -1,0 +1,59 @@
+# Pagination and Edges
+# There are a number of ways we could do pagination:
+
+# We could do something like friends(first:2 offset:2) to ask for the next two in the list.
+# We could do something like friends(first:2 after:$friendId), to ask for the next two after the last friend we fetched.
+# We could do something like friends(first:2 after:$friendCursor), where we get a cursor from the last item and use that to paginate.
+
+{
+  hero {
+    name
+    friends(first: 2) {
+      name
+    }
+  }
+}
+
+# my sample
+
+{
+  allFilms(first: 4) {
+    edges {
+      node {
+        title
+      }
+    }
+  }
+}
+
+{
+  #after cursor! this way it works
+  allFilms(first: 2, after: "YXJyYXljb25uZWN0aW9uOjA=") {
+    edges {
+      node {
+        id
+        title
+      }
+      cursor
+    }
+  }
+}
+
+# End-of-list, counts, and Connections
+
+{
+  allFilms(first: 2, after: "YXJyYXljb25uZWN0aW9uOjA=") {
+    edges {
+      node {
+        id
+        title
+      }
+      cursor
+    }
+
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

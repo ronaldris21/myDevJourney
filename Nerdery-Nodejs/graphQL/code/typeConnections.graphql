@@ -1,0 +1,70 @@
+
+# LEARNING TO USE EDGE ON GRAPHQL
+# LEARNING TO USE EDGE ON GRAPHQL
+# LEARNING TO USE EDGE ON GRAPHQL
+
+type User {
+  id: ID!
+  name: String!
+  post: PostConnection!
+}
+
+type PostConnection {
+  edges: [PostEdge]!
+  pageInfo: PageInfo!
+}
+
+type PostEdge {
+  node: Post!
+  cursor: String!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+# query:
+{
+  allVehicles {
+    totalCount
+    edges {
+      node {
+        name
+        costInCredits
+      }
+    }
+  }
+}
+
+# result:
+
+# {
+#   "data": {
+#     "allVehicles": {
+#       "totalCount": 39,
+#       "edges":[
+#          {
+#           "node": {
+#             "name": "Sand Crawler",
+#             "costInCredits": 150000
+#           }
+#         },
+#         {
+#           "node": {
+#             "name": "T-16 skyhopper",
+#             "costInCredits": 14500
+#           }
+#         }
+#       ]
+#     }
+#   }
+# }

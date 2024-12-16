@@ -1,0 +1,16 @@
+
+# MUTATION GET DATA AFTER LIKE:
+mutation StoryLikeMutation($input: StoryLikeInput) {
+  storyLike(input: $input) {
+    story {
+      likers {
+        count
+      }
+      likeSentence {
+        text
+      }
+    }
+  }
+}
+
+# Suscribe story likes:
